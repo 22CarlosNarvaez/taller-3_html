@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="es-CO" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d6efd'/><path d='M7 20l5-8 4 6 3-4 6 6' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>" />
+    <meta name="author" content="Carlos Narvaez" />
+    <meta name="description" content="Currículum vitae de desarrolladores de software" />
+    <meta name="keywords" content="Taller 3 bootstrap" />
+    <meta name="theme-color" content="#0d1117" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha---ç384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --accent:#0d6efd;
+        }
+        body{
+            background-color:#0d1117;
+        }
+        h1, h2, h3, .display-font{
+            font-family:"Sora", system-ui, sans-serif;
+        }
+        .portfolio-header{
+            border-left:4px solid var(--accent);
+            padding-left:1rem;
+        }
+        .table-card{
+            border-radius:1rem;
+            overflow:hidden;
+            box-shadow:0 1rem 2rem rgba(0,0,0,.35);
+        }
+        table thead th{
+            white-space:nowrap;
+            font-size:.78rem;
+            letter-spacing:.04em;
+            text-transform:uppercase;
+            color:#9fa6b2;
+        }
+        td.col-id{
+            color:#9fa6b2;
+            font-variant-numeric:tabular-nums;
+        }
+        td.col-desc{
+            max-width:220px;
+        }
+        td.col-tech{
+            font-family:"Sora", system-ui, sans-serif;
+            font-size:.82rem;
+            color:#c8ccd2;
+        }
+        tbody tr{
+            transition:background-color .15s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-secondary sticky-top" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2 text-white fw-semibold" href="#inicio">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect width="32" height="32" rx="8" fill="#0d6efd"/>
+                    <path d="M7 20l5-8 4 6 3-4 6 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                DevFolio
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/index.html">
+                            <i class="bi bi-house me-1"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-grid me-1"></i>Servicios
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark bg-dark border-secondary">
+                            <li>
+                                <a class="dropdown-item" href="#servicios">
+                                    <i class="bi bi-code-slash me-2 text-primary"></i>Maquetación Web
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#servicios">
+                                    <i class="bi bi-phone me-2 text-success"></i>Diseño Responsivo
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#servicios">
+                                    <i class="bi bi-layers me-2 text-warning"></i>UI con React
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider border-secondary"></li>
+                            <li>
+                                <a class="dropdown-item" href="#servicios">
+                                    <i class="bi bi-palette me-2 text-info"></i>Diseño UX/UI
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/app/forms.html">
+                            <i class="bi bi-briefcase me-1"></i>Formularios
+                        </a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="./github.html">
+                            <i class="bi bi-briefcase me-1"></i>GitHub
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">
+                            <i class="bi bi-question-circle me-1"></i>FAQ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">
+                            <i class="bi bi-envelope me-1"></i>Contacto
+                        </a>
+                    </li>
+                </ul>
+                <a href="/index.html" class="btn btn-primary px-4">
+                    <i class="bi bi-box-arrow-right me-1"></i>Salir
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="inicio" class="container py-5">
+
+        <header class="mb-5 portfolio-header">
+            <p class="text-secondary mb-1 text-uppercase small">Carlos Narváez · Desarrollo &amp; Diseño de Software</p>
+            <h1 class="fw-bold mb-2">Portafolio de servicios</h1>
+            <p class="text-secondary mb-0" style="max-width:620px;">
+                Resumen de proyectos de diseño y desarrollo de software entregados a clientes,
+                con su categoría, tecnologías utilizadas y estado actual.
+            </p>
+        </header>
+
+     
+        <div class="table-card">
+            <div class="table-responsive">
+                <table class="table table-dark table-striped table-hover align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Proyecto</th>
+                            <th scope="col">Categoría</th>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Tecnologías</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Duración</th>
+                            <th scope="col">Entrega</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Enlace</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-id">01</td>
+                            <td class="fw-semibold">FinTrack</td>
+                            <td><span class="badge text-bg-info"><i class="bi bi-palette me-1"></i>Diseño UI/UX</span></td>
+                            <td>NovaPay S.A.S.</td>
+                            <td class="col-tech">Figma · Design System</td>
+                            <td class="col-desc text-truncate" title="Diseño de interfaz para control de gastos personales e inversión.">Diseño de interfaz para control de gastos e inversión.</td>
+                            <td>4 semanas</td>
+                            <td>Feb 2026</td>
+                            <td><span class="badge text-bg-success">Completado</span></td>
+                            <td><a href="#" class="btn btn-sm btn-outline-primary">Ver caso <i class="bi bi-box-arrow-up-right"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-id">02</td>
+                            <td class="fw-semibold">FinTracker</td>
+                            <td><span class="badge text-bg-info"><i class="bi bi-palette me-1"></i>Diseño UI/UX</span></td>
+                            <td>NovaPay S.A.S.</td>
+                            <td class="col-tech">Figma · Design System</td>
+                            <td class="col-desc text-truncate" title="Diseño de interfaz para control de gastos personales e inversión.">Diseño de interfaz para control de gastos e inversión.</td>
+                            <td>4 semanas</td>
+                            <td>Feb 2026</td>
+                            <td><span class="badge text-bg-success">Completado</span></td>
+                            <td><a href="#" class="btn btn-sm btn-outline-primary">Ver caso <i class="bi bi-box-arrow-up-right"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-id">03</td>
+                            <td class="fw-semibold">ModaViva</td>
+                            <td><span class="badge text-bg-primary"><i class="bi bi-code-slash me-1"></i>Desarrollo Web</span></td>
+                            <td>ModaViva Boutique</td>
+                            <td class="col-tech">React · Node.js · Stripe</td>
+                            <td class="col-desc text-truncate" title="E-commerce completo con pasarela de pagos y panel de inventario.">E-commerce con pasarela de pagos y panel de inventario.</td>
+                            <td>6 semanas</td>
+                            <td>Mar 2026</td>
+                            <td><span class="badge text-bg-warning text-dark">En progreso</span></td>
+                            <td><button class="btn btn-sm btn-outline-secondary" disabled>En desarrollo</button></td>
+                        </tr>
+                        <tr>
+                            <td class="col-id">04</td>
+                            <td class="fw-semibold">RutaExpress</td>
+                            <td><span class="badge text-bg-success"><i class="bi bi-phone me-1"></i>App Móvil</span></td>
+                            <td>RutaExpress Logística</td>
+                            <td class="col-tech">Flutter · Firebase</td>
+                            <td class="col-desc text-truncate" title="Aplicación para seguimiento de pedidos en tiempo real.">Seguimiento de pedidos en tiempo real.</td>
+                            <td>8 semanas</td>
+                            <td>Ene 2026</td>
+                            <td><span class="badge text-bg-success">Completado</span></td>
+                            <td><a href="#" class="btn btn-sm btn-outline-primary">Ver demo <i class="bi bi-box-arrow-up-right"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-id">05</td>
+                            <td class="fw-semibold">Panel Analítica</td>
+                            <td><span class="badge text-bg-warning text-dark"><i class="bi bi-bar-chart me-1"></i>Dashboard</span></td>
+                            <td>Grupo Sercon</td>
+                            <td class="col-tech">Vue.js · Chart.js</td>
+                            <td class="col-desc text-truncate" title="Visualización de KPIs de ventas y producción en un panel interactivo.">KPIs de ventas y producción en panel interactivo.</td>
+                            <td>3 semanas</td>
+                            <td>Abr 2026</td>
+                            <td><span class="badge text-bg-secondary">Mantenimiento</span></td>
+                            <td><a href="#" class="btn btn-sm btn-outline-primary">Ver demo <i class="bi bi-box-arrow-up-right"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-id">06</td>
+                            <td class="fw-semibold">Identidad ArqEstudio</td>
+                            <td><span class="badge text-bg-danger"><i class="bi bi-brush me-1"></i>Branding</span></td>
+                            <td>ArqEstudio Arquitectos</td>
+                            <td class="col-tech">Illustrator · Webflow</td>
+                            <td class="col-desc text-truncate" title="Rediseño de marca y sitio web institucional.">Rediseño de marca y sitio web institucional.</td>
+                            <td>5 semanas</td>
+                            <td>Dic 2025</td>
+                            <td><span class="badge text-bg-success">Completado</span></td>
+                            <td><a href="#" class="btn btn-sm btn-outline-primary">Ver caso <i class="bi bi-box-arrow-up-right"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-id">07</td>
+                            <td class="fw-semibold">PymeGest</td>
+                            <td><span class="badge text-bg-light text-dark"><i class="bi bi-diagram-3 me-1"></i>Sist. de Gestión</span></td>
+                            <td>Comercial Andina</td>
+                            <td class="col-tech">Laravel · MySQL</td>
+                            <td class="col-desc text-truncate" title="ERP a medida para inventario, facturación y nómina.">ERP a medida para inventario, facturación y nómina.</td>
+                            <td>10 semanas</td>
+                            <td>May 2026</td>
+                            <td><span class="badge text-bg-warning text-dark">En progreso</span></td>
+                            <td><button class="btn btn-sm btn-outline-secondary" disabled>En desarrollo</button></td>
+                        </tr>
+                            <tr>
+                            <td class="col-id">08</td>
+                            <td class="fw-semibold">Panel Analítica</td>
+                            <td><span class="badge text-bg-warning text-dark"><i class="bi bi-bar-chart me-1"></i>Dashboard</span></td>
+                            <td>Grupo Sercon</td>
+                            <td class="col-tech">Vue.js · Chart.js</td>
+                            <td class="col-desc text-truncate" title="Visualización de KPIs de ventas y producción en un panel interactivo.">KPIs de ventas y producción en panel interactivo.</td>
+                            <td>3 semanas</td>
+                            <td>Abr 2026</td>
+                            <td><span class="badge text-bg-secondary">Mantenimiento</span></td>
+                            <td><a href="#" class="btn btn-sm btn-outline-primary">Ver demo <i class="bi bi-box-arrow-up-right"></i></a></td>
+                        </tr>
+                         <tr>
+                            <td class="col-id">09</td>
+                            <td class="fw-semibold">RutaExpress</td>
+                            <td><span class="badge text-bg-success"><i class="bi bi-phone me-1"></i>App Móvil</span></td>
+                            <td>RutaExpress Logística</td>
+                            <td class="col-tech">Flutter · Firebase</td>
+                            <td class="col-desc text-truncate" title="Aplicación para seguimiento de pedidos en tiempo real.">Seguimiento de pedidos en tiempo real.</td>
+                            <td>8 semanas</td>
+                            <td>Ene 2026</td>
+                            <td><span class="badge text-bg-success">Completado</span></td>
+                            <td><a href="#" class="btn btn-sm btn-outline-primary">Ver demo <i class="bi bi-box-arrow-up-right"></i></a></td>
+                        </tr>
+                         <tr>
+                             <td class="col-id">10</td>
+                            <td class="fw-semibold">FinTracker</td>
+                            <td><span class="badge text-bg-info"><i class="bi bi-palette me-1"></i>Diseño UI/UX</span></td>
+                            <td>NovaPay S.A.S.</td>
+                            <td class="col-tech">Figma · Design System</td>
+                            <td class="col-desc text-truncate" title="Diseño de interfaz para control de gastos personales e inversión.">Diseño de interfaz para control de gastos e inversión.</td>
+                            <td>4 semanas</td>
+                            <td>Feb 2026</td>
+                            <td><span class="badge text-bg-success">Completado</span></td>
+                            <td><a href="#" class="btn btn-sm btn-outline-primary">Ver caso <i class="bi bi-box-arrow-up-right"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<!doctype html>
+<html lang="es-CO" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar sesión · DevFolio</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d6efd'/><path d='M7 20l5-8 4 6 3-4 6 6' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>" />
+    <meta name="author" content="Carlos Narvaez" />
+    <meta name="description" content="Inicio de sesión de desarrolladores de software" />
+    <meta name="keywords" content="Login, autenticación, Taller 3 bootstrap" />
+    <meta name="theme-color" content="#0d1117" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+   <body class="bg-dark text-white">
+ 
+    <nav class="navbar navbar-dark bg-dark border-bottom border-secondary">
+        <div class="container">
+            <a class="navbar-brand fw-semibold d-flex align-items-center gap-2" href="index.html">
+                <i class="bi bi-bar-chart-line-fill text-primary fs-4"></i>DevFolio
+            </a>
+          
+        </div>
+    </nav>
+ 
+    <main class="container py-5">
+ 
+        <!-- TABS -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 col-md-10 col-lg-8">
+                <ul class="nav nav-tabs nav-fill border-secondary" id="authTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active text-white" id="login-tab" data-bs-toggle="tab" data-bs-target="#loginPanel" type="button" role="tab">
+                            <i class="bi bi-box-arrow-in-right me-2"></i>Iniciar sesión
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link text-secondary" id="register-tab" data-bs-toggle="tab" data-bs-target="#registerPanel" type="button" role="tab">
+                            <i class="bi bi-person-plus me-2"></i>Crear cuenta
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+ 
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+                <div class="tab-content" id="authTabsContent">
+ 
+                    <!-- LOGIN -->
+                    <div class="tab-pane fade show active" id="loginPanel" role="tabpanel">
+                        <div class="bg-black rounded-3 border border-secondary p-4">
+                            <header class="mb-4 border-start border-primary border-3 ps-3">
+                                <p class="text-secondary mb-1 text-uppercase small">Acceso de desarrolladores</p>
+                                <h2 class="fw-bold mb-1">Iniciar sesión</h2>
+                                <p class="text-secondary mb-0 small">Ingresa tus credenciales para acceder al panel de proyectos.</p>
+                            </header>
+ 
+                            <form novalidate>
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label text-secondary text-uppercase small">Correo electrónico</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-envelope"></i></span>
+                                        <input type="email" class="form-control bg-dark text-white border-secondary" id="loginEmail" placeholder="nombre@correo.com" required>
+                                    </div>
+                                </div>
+ 
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label text-secondary text-uppercase small">Contraseña</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-lock"></i></span>
+                                        <input type="password" class="form-control bg-dark text-white border-secondary" id="loginPassword" placeholder="••••••••" required minlength="6">
+                                        <button class="btn btn-outline-secondary toggle-password" type="button" data-target="loginPassword" aria-label="Mostrar contraseña">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+ 
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="rememberMe">
+                                        <label class="form-check-label small text-secondary" for="rememberMe">Recordarme</label>
+                                    </div>
+                                    <a href="#" class="small">¿Olvidaste tu contraseña?</a>
+                                </div>
+ 
+                                <button type="submit" class="btn btn-primary w-100 py-2">
+                                    <i class="bi bi-box-arrow-in-right me-1"></i>Iniciar sesión
+                                </button>
+                            </form>
+ 
+                            <hr class="border-secondary my-4">
+ 
+                            <p class="text-center text-secondary small mb-0">
+                                ¿No tienes cuenta?
+                                <button class="btn btn-link btn-sm p-0 text-primary fw-semibold" onclick="document.getElementById('register-tab').click()">
+                                    Regístrate aquí
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+ 
+                    <!-- REGISTER -->
+                    <div class="tab-pane fade" id="registerPanel" role="tabpanel">
+                        <div class="bg-black rounded-3 border border-secondary p-4">
+                            <header class="mb-4 border-start border-primary border-3 ps-3">
+                                <p class="text-secondary mb-1 text-uppercase small">Nuevo desarrollador</p>
+                                <h2 class="fw-bold mb-1">Crear cuenta</h2>
+                                <p class="text-secondary mb-0 small">Completa el formulario para unirte a DevFolio.</p>
+                            </header>
+ 
+                            <form novalidate>
+                                <div class="row g-3 mb-3">
+                                    <div class="col-12 col-sm-6">
+                                        <label for="firstName" class="form-label text-secondary text-uppercase small">Nombre</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-person"></i></span>
+                                            <input type="text" class="form-control bg-dark text-white border-secondary" id="firstName" placeholder="Carlos" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <label for="lastName" class="form-label text-secondary text-uppercase small">Apellido</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-person"></i></span>
+                                            <input type="text" class="form-control bg-dark text-white border-secondary" id="lastName" placeholder="Narváez" required>
+                                        </div>
+                                    </div>
+                                </div>
+ 
+                                <div class="mb-3">
+                                    <label for="registerEmail" class="form-label text-secondary text-uppercase small">Correo electrónico</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-envelope"></i></span>
+                                        <input type="email" class="form-control bg-dark text-white border-secondary" id="registerEmail" placeholder="nombre@correo.com" required>
+                                    </div>
+                                </div>
+ 
+                                <div class="mb-3">
+                                    <label for="specialty" class="form-label text-secondary text-uppercase small">Especialidad</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-code-slash"></i></span>
+                                        <select class="form-select bg-dark text-white border-secondary" id="specialty" required>
+                                            <option value="" disabled selected>Selecciona tu especialidad</option>
+                                            <option>Desarrollo Frontend</option>
+                                            <option>Desarrollo Backend</option>
+                                            <option>Desarrollo Full Stack</option>
+                                            <option>Diseño UI/UX</option>
+                                            <option>Desarrollo Móvil</option>
+                                            <option>DevOps / Cloud</option>
+                                        </select>
+                                    </div>
+                                </div>
+ 
+                                <div class="mb-3">
+                                    <label for="registerPassword" class="form-label text-secondary text-uppercase small">Contraseña</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-lock"></i></span>
+                                        <input type="password" class="form-control bg-dark text-white border-secondary" id="registerPassword" placeholder="Mínimo 8 caracteres" required minlength="8">
+                                        <button class="btn btn-outline-secondary toggle-password" type="button" data-target="registerPassword" aria-label="Mostrar contraseña">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                    </div>
+                                    <div class="form-text text-secondary">Mínimo 8 caracteres.</div>
+                                </div>
+ 
+                                <div class="mb-4">
+                                    <label for="confirmPassword" class="form-label text-secondary text-uppercase small">Confirmar contraseña</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-lock-fill"></i></span>
+                                        <input type="password" class="form-control bg-dark text-white border-secondary" id="confirmPassword" placeholder="Repite tu contraseña" required minlength="8">
+                                        <button class="btn btn-outline-secondary toggle-password" type="button" data-target="confirmPassword" aria-label="Mostrar contraseña">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+ 
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="acceptTerms" required>
+                                    <label class="form-check-label small text-secondary" for="acceptTerms">
+                                        Acepto los <a href="#">términos y condiciones</a> y la <a href="#">política de privacidad</a>.
+                                    </label>
+                                </div>
+ 
+                                <button type="submit" class="btn btn-primary w-100 py-2">
+                                    <i class="bi bi-person-check me-1"></i>Crear cuenta
+                                </button>
+                            </form>
+ 
+                            <hr class="border-secondary my-4">
+ 
+                            <p class="text-center text-secondary small mb-0">
+                                ¿Ya tienes cuenta?
+                                <button class="btn btn-link btn-sm p-0 text-primary fw-semibold" onclick="document.getElementById('login-tab').click()">
+                                    Inicia sesión aquí
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+ 
+                </div>
+            </div>
+        </div>
+    </main>
+ 
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+        document.querySelectorAll('.toggle-password').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var input = document.getElementById(btn.dataset.target);
+                var icon = btn.querySelector('i');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.replace('bi-eye', 'bi-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.replace('bi-eye-slash', 'bi-eye');
+                }
+            });
+        });
+    </script>
+</body>
+
+   
+
+    <footer class="bg-black border-top border-secondary py-4 text-center text-secondary small">
+        <div class="container">
+            <div class="d-flex justify-content-center gap-3 mb-2">
+                <a href="#" class="text-secondary"><i class="bi bi-github fs-5"></i></a>
+                <a href="#" class="text-secondary"><i class="bi bi-linkedin fs-5"></i></a>
+                <a href="#" class="text-secondary"><i class="bi bi-envelope fs-5"></i></a>
+            </div>
+            &copy; 2025 Carlos Narvaez &mdash; Todos los derechos reservados
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+        document.querySelectorAll('.toggle-password').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var input = document.getElementById(btn.dataset.target);
+                var icon = btn.querySelector('i');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.replace('bi-eye', 'bi-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.replace('bi-eye-slash', 'bi-eye');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>
